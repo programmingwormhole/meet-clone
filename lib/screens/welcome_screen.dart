@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zoom_ui/screens/auth/login/login_screen.dart';
+import 'package:zoom_ui/screens/home_screen.dart';
 import 'package:zoom_ui/utils/colors.dart';
 import 'auth/signup/age_screen.dart';
 
@@ -32,8 +33,9 @@ class WelcomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/images/logo_white.png',
-              width: 250,
+              'assets/images/noom_logo.png',
+              width: 350,
+              color: Colors.white,
             )
           ],
         ),
@@ -65,17 +67,25 @@ class WelcomeScreen extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            Container(
-              height: 50,
-              width: size * .9,
-              decoration: BoxDecoration(
-                  color: title.withOpacity(0.4),
-                  borderRadius: BorderRadius.circular(12)),
-              child: Center(
-                child: Text(
-                  'Join a Meeting',
-                  style: TextStyle(
-                      color: title, fontSize: 16, fontWeight: FontWeight.bold),
+            InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const HomeScreen()));
+              },
+              child: Container(
+                height: 50,
+                width: size * .9,
+                decoration: BoxDecoration(
+                    color: title.withOpacity(0.4),
+                    borderRadius: BorderRadius.circular(12)),
+                child: Center(
+                  child: Text(
+                    'Join a Meeting',
+                    style: TextStyle(
+                        color: title,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
             ),
@@ -83,8 +93,9 @@ class WelcomeScreen extends StatelessWidget {
               height: 10,
             ),
             InkWell(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (_)=>const AgeScreen()));
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const AgeScreen()));
               },
               child: Container(
                 height: 50,
@@ -96,7 +107,9 @@ class WelcomeScreen extends StatelessWidget {
                   child: Text(
                     'Sign Up',
                     style: TextStyle(
-                        color: title, fontSize: 16, fontWeight: FontWeight.bold),
+                        color: title,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -105,8 +118,9 @@ class WelcomeScreen extends StatelessWidget {
               height: 10,
             ),
             InkWell(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (_)=>const LoginScreen()));
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const LoginScreen()));
               },
               child: Container(
                 height: 50,
@@ -118,7 +132,9 @@ class WelcomeScreen extends StatelessWidget {
                   child: Text(
                     'Sign In',
                     style: TextStyle(
-                        color: title, fontSize: 16, fontWeight: FontWeight.bold),
+                        color: title,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ),

@@ -15,55 +15,61 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    void _showcontent() {
+    void showcontent() {
       showDialog(
         context: context, barrierDismissible: false, // user must tap button!
 
         builder: (BuildContext context) {
           return Center(
               child: Container(
-            height: 400,
+            height: 250,
             width: MediaQuery.of(context).size.width * 0.8,
             decoration: BoxDecoration(
-                color: background, borderRadius: BorderRadius.circular(20)),
+                border: Border.all(width: 3, color: title),
+                color: background,
+                borderRadius: BorderRadius.circular(20)),
             child: Padding(
-              padding: EdgeInsets.all(30),
+              padding: const EdgeInsets.all(30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'We just sent an email to your email address which you provided with a link to reset your password. Check your inbox and follow the instructions in the email.',
-                    style: TextStyle(color: Colors.white, fontSize: 15),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const LoginScreen()));
-                    },
-                    child: Container(
-                      height: 50,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        color: title.withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(15),
+                  Stack(
+                    alignment: Alignment.bottomCenter,
+                    clipBehavior: Clip.none,
+                    children: [
+                      const Text(
+                        'We just sent an email to your email address which you provided with a link to reset your password. Check your inbox and follow the instructions in the email.',
+                        style: TextStyle(color: Colors.white, fontSize: 15),
                       ),
-                      child: Center(
-                        child: Text(
-                          'Thanks !',
-                          style: TextStyle(
-                              color: title,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400),
+                      Positioned(
+                        bottom: -95,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => const LoginScreen()));
+                          },
+                          child: Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: background,
+                                border: Border.all(width: 3, color: title)),
+                            child: const Center(
+                              child: Icon(
+                                Icons.close,
+                                color: Colors.white,
+                                size: 35,
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                  )
+                      )
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -84,7 +90,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           icon: const Icon(Icons.arrow_back_ios_outlined),
         ),
         title: Text(
-          'Sign Up',
+          'Forgot Password',
           style: TextStyle(
               color: title, fontWeight: FontWeight.w500, fontSize: 22),
         ),
@@ -107,7 +113,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               key: _formKey,
               child: TextFormField(
                 validator: (value) {
-                  if (value?.length != 4) {
+                  if (value == '') {
                     return 'Please type valid email';
                   }
                   return null;
@@ -149,7 +155,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               height: 30,
             ),
             InkWell(
-              onTap: _showcontent,
+              onTap: showcontent,
               child: Container(
                 height: 50,
                 width: MediaQuery.of(context).size.width,
