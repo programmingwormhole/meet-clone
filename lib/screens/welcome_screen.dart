@@ -35,7 +35,7 @@ class WelcomeScreen extends StatelessWidget {
             Image.asset(
               'assets/images/noom_logo.png',
               width: 350,
-              color: Colors.white,
+              color: title,
             )
           ],
         ),
@@ -43,9 +43,9 @@ class WelcomeScreen extends StatelessWidget {
       bottomNavigationBar: Container(
         height: 270,
         width: double.infinity,
-        decoration: const BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.only(
+        decoration: BoxDecoration(
+            color: black,
+            borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
             )),
@@ -101,7 +101,7 @@ class WelcomeScreen extends StatelessWidget {
                 height: 50,
                 width: size * .9,
                 decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.1),
+                    color: title.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(12)),
                 child: Center(
                   child: Text(
@@ -126,7 +126,7 @@ class WelcomeScreen extends StatelessWidget {
                 height: 50,
                 width: size * .9,
                 decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.1),
+                    color: title.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(12)),
                 child: Center(
                   child: Text(

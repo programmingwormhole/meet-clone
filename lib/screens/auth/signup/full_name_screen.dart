@@ -16,9 +16,9 @@ class _FullNameScreenState extends State<FullNameScreen> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: black,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: black,
         elevation: 0,
         leading: IconButton(
           onPressed: () {
@@ -51,12 +51,12 @@ class _FullNameScreenState extends State<FullNameScreen> {
             height: 60,
             width: double.infinity,
             decoration: BoxDecoration(
-              border: const Border(
+              border: Border(
                 top: BorderSide(
-                    color: Colors.white, width: 0.6
+                    color: title, width: 0.6
                 ),
                 bottom: BorderSide(
-                    color: Colors.white, width: 0.6
+                    color: title, width: 0.6
                 ),
               ),
               color: title.withOpacity(0.2),

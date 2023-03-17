@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zoom_ui/screens/OnBoarding/screen_1.dart';
+import 'package:zoom_ui/screens/auth/login/login_screen.dart';
+import 'package:zoom_ui/screens/home_screen.dart';
+import 'package:zoom_ui/screens/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const OnBoardOne(),
+      home: const WelcomeScreen(),
 
     );
   }

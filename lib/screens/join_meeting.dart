@@ -15,9 +15,9 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: black,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: black,
         elevation: 0,
         leading: IconButton(
             onPressed: () {
@@ -42,9 +42,9 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
               height: 140,
               width: double.infinity,
               decoration: BoxDecoration(
-                border: const Border(
-                  top: BorderSide(color: Colors.white, width: 0.6),
-                  bottom: BorderSide(color: Colors.white, width: 0.6),
+                border: Border(
+                  top: BorderSide(color: title, width: 0.6),
+                  bottom: BorderSide(color: title, width: 0.6),
                 ),
                 color: title.withOpacity(0.2),
               ),
@@ -72,8 +72,8 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
                             hintStyle: TextStyle(color: subTitle)),
                       ),
                     ),
-                    const Divider(
-                      color: Colors.white,
+                    Divider(
+                      color: title,
                       thickness: 0.2,
                       endIndent: 30,
                       indent: 30,
@@ -151,10 +151,10 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
               height: 150,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
-                  border: const Border(
-                    top: BorderSide(color: Colors.white, width: 0.6),
-                    bottom: BorderSide(color: Colors.white, width: 0.6),
+                  color: title.withOpacity(0.2),
+                  border: Border(
+                    top: BorderSide(color: title, width: 0.6),
+                    bottom: BorderSide(color: title, width: 0.6),
                   )),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -164,10 +164,10 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
                     padding: const EdgeInsets.only(left: 8.0, right: 8),
                     child: Row(
                       children: [
-                        const Text(
+                        Text(
                           'Don\'t Connect To Audio',
                           style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+                              color: title, fontWeight: FontWeight.bold),
                         ),
                         const Spacer(),
                         SizedBox(
@@ -192,16 +192,16 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
                     ),
                   ),
                   Divider(
-                    color: Colors.black.withOpacity(0.4),
+                    color: black.withOpacity(0.4),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0, right: 8),
                     child: Row(
                       children: [
-                        const Text(
+                        Text(
                           'Don\'t Connect To Audio',
                           style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+                              color: title, fontWeight: FontWeight.bold),
                         ),
                         const Spacer(),
                         SizedBox(

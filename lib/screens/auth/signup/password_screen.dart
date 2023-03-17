@@ -15,9 +15,9 @@ class _PasswordScreenState extends State<PasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: black,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: black,
         elevation: 0,
         leading: IconButton(
           onPressed: () {
@@ -50,9 +50,9 @@ class _PasswordScreenState extends State<PasswordScreen> {
             height: 60,
             width: double.infinity,
             decoration: BoxDecoration(
-              border: const Border(
-                top: BorderSide(color: Colors.white, width: 0.6),
-                bottom: BorderSide(color: Colors.white, width: 0.6),
+              border: Border(
+                top: BorderSide(color: title, width: 0.6),
+                bottom: BorderSide(color: title, width: 0.6),
               ),
               color: title.withOpacity(0.2),
             ),

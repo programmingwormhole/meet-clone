@@ -38,9 +38,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     alignment: Alignment.bottomCenter,
                     clipBehavior: Clip.none,
                     children: [
-                      const Text(
+                      Text(
                         'We just sent an email to your email address which you provided with a link to reset your password. Check your inbox and follow the instructions in the email.',
-                        style: TextStyle(color: Colors.white, fontSize: 15),
+                        style: TextStyle(color: title, fontSize: 15),
                       ),
                       Positioned(
                         bottom: -95,
@@ -58,10 +58,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                 shape: BoxShape.circle,
                                 color: background,
                                 border: Border.all(width: 3, color: title)),
-                            child: const Center(
+                            child: Center(
                               child: Icon(
                                 Icons.close,
-                                color: Colors.white,
+                                color: title,
                                 size: 35,
                               ),
                             ),
@@ -79,9 +79,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: black,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: black,
         elevation: 0,
         leading: IconButton(
           onPressed: () {
@@ -114,9 +114,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             height: 60,
             width: double.infinity,
             decoration: BoxDecoration(
-              border: const Border(
-                top: BorderSide(color: Colors.white),
-                bottom: BorderSide(color: Colors.white),
+              border: Border(
+                top: BorderSide(color: title),
+                bottom: BorderSide(color: title),
               ),
               color: title.withOpacity(0.2),
             ),

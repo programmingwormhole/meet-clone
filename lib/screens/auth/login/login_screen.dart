@@ -18,9 +18,9 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: black,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: black,
         elevation: 0,
         leading: IconButton(
           onPressed: () {
@@ -51,9 +51,9 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 140,
               width: double.infinity,
               decoration: BoxDecoration(
-                border: const Border(
-                  top: BorderSide(color: Colors.white, width: 0.6),
-                  bottom: BorderSide(color: Colors.white, width: 0.6),
+                border: Border(
+                  top: BorderSide(color: title, width: 0.6),
+                  bottom: BorderSide(color: title, width: 0.6),
                 ),
                 color: title.withOpacity(0.2),
               ),
@@ -81,8 +81,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             hintStyle: TextStyle(color: subTitle)),
                       ),
                     ),
-                    const Divider(
-                      color: Colors.white,
+                    Divider(
+                      color: title,
                       thickness: 0.2,
                       endIndent: 30,
                       indent: 30,
@@ -169,114 +169,122 @@ class _LoginScreenState extends State<LoginScreen> {
                     'OTHERS SIGN IN METHODS',
                     style: TextStyle(color: subTitle),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    height: 50,
-                    width: size * 0.9,
-                    decoration: BoxDecoration(
-                        color: title.withOpacity(0.1),
-                        border: Border.all(
-                            color: Colors.white.withOpacity(0.5), width: 0.7),
-                        borderRadius: BorderRadius.circular(15)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/google.png',
-                            width: 20,
-                            color: Colors.white.withOpacity(0.5),
+                  Center(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          height: 50,
+                          width: size * 0.9,
+                          decoration: BoxDecoration(
+                              color: title.withOpacity(0.1),
+                              border: Border.all(
+                                  color: title.withOpacity(0.5), width: 0.7),
+                              borderRadius: BorderRadius.circular(15)),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/images/google.png',
+                                  width: 20,
+                                  color: title.withOpacity(0.5),
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  'Continue With Google',
+                                  style: TextStyle(
+                                      color: title,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w500),
+                                )
+                              ],
+                            ),
                           ),
-                          const SizedBox(
-                            width: 10,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          height: 50,
+                          width: size * 0.9,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: title.withOpacity(0.5), width: 0.7),
+                              color: title.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(15)),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/images/facebook.png',
+                                  width: 20,
+                                  color: title.withOpacity(0.5),
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  'Continue With Facebook',
+                                  style: TextStyle(
+                                      color: title,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w500),
+                                )
+                              ],
+                            ),
                           ),
-                          Text(
-                            'Continue With Google',
-                            style: TextStyle(
-                                color: title,
-                                fontSize: 17,
-                                fontWeight: FontWeight.w500),
-                          )
-                        ],
-                      ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          height: 50,
+                          width: size * 0.9,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: title.withOpacity(0.5), width: 0.7),
+                              color: title.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(15)),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/images/apple.png',
+                                  width: 20,
+                                  color: title.withOpacity(0.5),
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  'Continue With Google',
+                                  style: TextStyle(
+                                      color: title,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w500),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    height: 50,
-                    width: size * 0.9,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.white.withOpacity(0.5), width: 0.7),
-                        color: title.withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(15)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/facebook.png',
-                            width: 20,
-                            color: Colors.white.withOpacity(0.5),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            'Continue With Facebook',
-                            style: TextStyle(
-                                color: title,
-                                fontSize: 17,
-                                fontWeight: FontWeight.w500),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    height: 50,
-                    width: size * 0.9,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.white.withOpacity(0.5), width: 0.7),
-                        color: title.withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(15)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/apple.png',
-                            width: 20,
-                            color: Colors.white.withOpacity(0.5),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            'Continue With Google',
-                            style: TextStyle(
-                                color: title,
-                                fontSize: 17,
-                                fontWeight: FontWeight.w500),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
+                  )
                 ],
               ),
             )
