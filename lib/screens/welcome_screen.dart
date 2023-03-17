@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zoom_ui/screens/auth/login/login_screen.dart';
-import 'package:zoom_ui/screens/home_screen.dart';
 import 'package:zoom_ui/utils/colors.dart';
 import 'auth/signup/age_screen.dart';
+import 'join_meeting.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -43,9 +43,9 @@ class WelcomeScreen extends StatelessWidget {
       bottomNavigationBar: Container(
         height: 270,
         width: double.infinity,
-        decoration: BoxDecoration(
-            color: title.withOpacity(0.3),
-            borderRadius: const BorderRadius.only(
+        decoration: const BoxDecoration(
+            color: Colors.black,
+            borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
             )),
@@ -70,13 +70,13 @@ class WelcomeScreen extends StatelessWidget {
             InkWell(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const HomeScreen()));
+                    MaterialPageRoute(builder: (_) => const JoinMeetingScreen()));
               },
               child: Container(
                 height: 50,
                 width: size * .9,
                 decoration: BoxDecoration(
-                    color: title.withOpacity(0.4),
+                    color: background,
                     borderRadius: BorderRadius.circular(12)),
                 child: Center(
                   child: Text(

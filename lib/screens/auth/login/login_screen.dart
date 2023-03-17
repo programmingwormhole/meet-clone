@@ -18,9 +18,9 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: background,
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: background,
+        backgroundColor: Colors.black,
         elevation: 0,
         leading: IconButton(
           onPressed: () {
@@ -35,238 +35,252 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(
                 'VERIFY YOUR EMAIL ADDRESS',
                 style: TextStyle(color: title, fontSize: 15),
               ),
-              const SizedBox(
-                height: 20,
+            ),
+            Container(
+              height: 140,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                border: const Border(
+                  top: BorderSide(color: Colors.white, width: 0.6),
+                  bottom: BorderSide(color: Colors.white, width: 0.6),
+                ),
+                color: title.withOpacity(0.2),
               ),
-              Form(
-                key: _formKey,
-                child: TextFormField(
-                  validator: (value) {
-                    if (value == '') {
-                      return 'Please type valid email';
-                    }
-                    return null;
-                  },
-                  keyboardType: TextInputType.phone,
-                  textAlignVertical: TextAlignVertical.center,
-                  style: TextStyle(color: title),
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                      errorStyle: TextStyle(color: subTitle),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: title),
-                        borderRadius: BorderRadius.circular(12),
+              child: Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Form(
+                      key: _formKey,
+                      child: TextFormField(
+                        keyboardType: TextInputType.phone,
+                        textAlignVertical: TextAlignVertical.center,
+                        style: TextStyle(color: title),
+                        textAlign: TextAlign.center,
+                        decoration: InputDecoration(
+                            errorStyle: TextStyle(color: subTitle),
+                            focusedBorder: const OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 0, color: Colors.transparent)),
+                            enabledBorder: const OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 0, color: Colors.transparent)),
+                            hintText: 'E-mail address',
+                            hintStyle: TextStyle(color: subTitle)),
                       ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(
-                          color: title,
-                        ),
+                    ),
+                    const Divider(
+                      color: Colors.white,
+                      thickness: 0.2,
+                      endIndent: 30,
+                      indent: 30,
+                    ),
+                    Form(
+                      key: _newKey,
+                      child: TextFormField(
+                        keyboardType: TextInputType.phone,
+                        textAlignVertical: TextAlignVertical.center,
+                        style: TextStyle(color: title),
+                        textAlign: TextAlign.center,
+                        decoration: InputDecoration(
+                            errorStyle: TextStyle(color: subTitle),
+                            focusedBorder: const OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 0, color: Colors.transparent)),
+                            enabledBorder: const OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 0, color: Colors.transparent)),
+                            hintText: 'Password',
+                            hintStyle: TextStyle(color: subTitle)),
                       ),
-                      filled: true,
-                      fillColor: title.withOpacity(0.1),
-                      hintText: 'Email Address',
-                      hintStyle: TextStyle(color: subTitle)),
+                    )
+                  ],
                 ),
               ),
-              const SizedBox(
-                height: 10,
-              ),
-              Form(
-                key: _newKey,
-                child: TextFormField(
-                  validator: (value) {
-                    if (value == '') {
-                      return 'Please type your password';
-                    }
-                    return null;
-                  },
-                  keyboardType: TextInputType.phone,
-                  textAlignVertical: TextAlignVertical.center,
-                  style: TextStyle(color: title),
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                      errorStyle: TextStyle(color: subTitle),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: title),
-                        borderRadius: BorderRadius.circular(12),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      if (_formKey.currentState!.validate() &&
+                          _newKey.currentState!.validate()) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const HomeScreen()));
+                      }
+                    },
+                    child: Container(
+                      height: 50,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        color: background,
+                        borderRadius: BorderRadius.circular(15),
                       ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(
-                          color: title,
+                      child: Center(
+                        child: Text(
+                          'Sign In',
+                          style: TextStyle(
+                              color: title,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400),
                         ),
                       ),
-                      filled: true,
-                      fillColor: title.withOpacity(0.1),
-                      hintText: 'Password',
-                      hintStyle: TextStyle(color: subTitle)),
-                ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              InkWell(
-                onTap: () {
-                  if (_formKey.currentState!.validate() &&
-                      _newKey.currentState!.validate()) {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const HomeScreen()));
-                  }
-                },
-                child: Container(
-                  height: 50,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    color: title.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Sign In',
-                      style: TextStyle(
-                          color: title,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w400),
                     ),
                   ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const ForgotPasswordScreen()));
-                },
-                child: Text(
-                  'Forgot Password?',
-                  style: TextStyle(color: subTitle, fontWeight: FontWeight.bold),
-                ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Text(
-                'Others sign in methods',
-                style: TextStyle(color: subTitle),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                height: 50,
-                width: size * 0.9,
-                decoration: BoxDecoration(
-                    color: title.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(15)),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/google.png',
-                        width: 20,
-                        color: Colors.white.withOpacity(0.5),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'Continue With Google',
-                        style: TextStyle(
-                            color: title,
-                            fontSize: 17,
-                            fontWeight: FontWeight.w500),
-                      )
-                    ],
+                  const SizedBox(
+                    height: 10,
                   ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Container(
-                height: 50,
-                width: size * 0.9,
-                decoration: BoxDecoration(
-                    color: title.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(15)),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/facebook.png',
-                        width: 20,
-                        color: Colors.white.withOpacity(0.5),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'Continue With Facebook',
-                        style: TextStyle(
-                            color: title,
-                            fontSize: 17,
-                            fontWeight: FontWeight.w500),
-                      )
-                    ],
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const ForgotPasswordScreen()));
+                    },
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(
+                          color: background, fontWeight: FontWeight.bold),
+                    ),
                   ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Container(
-                height: 50,
-                width: size * 0.9,
-                decoration: BoxDecoration(
-                    color: title.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(15)),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/apple.png',
-                        width: 20,
-                        color: Colors.white.withOpacity(0.5),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'Continue With Google',
-                        style: TextStyle(
-                            color: title,
-                            fontSize: 17,
-                            fontWeight: FontWeight.w500),
-                      )
-                    ],
+                  const SizedBox(
+                    height: 30,
                   ),
-                ),
+                  Text(
+                    'OTHERS SIGN IN METHODS',
+                    style: TextStyle(color: subTitle),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    height: 50,
+                    width: size * 0.9,
+                    decoration: BoxDecoration(
+                        color: title.withOpacity(0.1),
+                        border: Border.all(
+                            color: Colors.white.withOpacity(0.5), width: 0.7),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/google.png',
+                            width: 20,
+                            color: Colors.white.withOpacity(0.5),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'Continue With Google',
+                            style: TextStyle(
+                                color: title,
+                                fontSize: 17,
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 50,
+                    width: size * 0.9,
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.white.withOpacity(0.5), width: 0.7),
+                        color: title.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/facebook.png',
+                            width: 20,
+                            color: Colors.white.withOpacity(0.5),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'Continue With Facebook',
+                            style: TextStyle(
+                                color: title,
+                                fontSize: 17,
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 50,
+                    width: size * 0.9,
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.white.withOpacity(0.5), width: 0.7),
+                        color: title.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/apple.png',
+                            width: 20,
+                            color: Colors.white.withOpacity(0.5),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'Continue With Google',
+                            style: TextStyle(
+                                color: title,
+                                fontSize: 17,
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

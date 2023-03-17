@@ -9,7 +9,7 @@ class OnBoardOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: background,
+      backgroundColor: Colors.black,
       body: SafeArea(
         child: Center(
           child: Column(
