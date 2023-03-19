@@ -69,15 +69,16 @@ class WelcomeScreen extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const JoinMeetingScreen()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => const JoinMeetingScreen()));
               },
               child: Container(
                 height: 50,
                 width: size * .9,
                 decoration: BoxDecoration(
-                    color: background,
-                    borderRadius: BorderRadius.circular(12)),
+                    color: background, borderRadius: BorderRadius.circular(12)),
                 child: Center(
                   child: Text(
                     'Join a Meeting',
