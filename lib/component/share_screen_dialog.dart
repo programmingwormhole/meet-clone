@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../screens/meeting_screen.dart';
 import '../utils/colors.dart';
 
-void shareScreen(BuildContext context, double size) {
+void shareScreenDialog(BuildContext context, double size) {
   showDialog(
       context: context,
       builder: (context) {

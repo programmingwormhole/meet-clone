@@ -12,6 +12,9 @@ class WelcomeScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: background,
+      drawer: Drawer(
+        backgroundColor: title,
+      ),
       appBar: AppBar(
         backgroundColor: background,
         elevation: 0,

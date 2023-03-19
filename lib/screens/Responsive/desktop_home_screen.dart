@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../component/share_screen.dart';
+import '../../component/share_screen_dialog.dart';
 import '../../utils/colors.dart';
 import '../../utils/responsive.dart';
 Widget desktopView(double size, BuildContext context) {
@@ -312,7 +312,7 @@ Widget desktopView(double size, BuildContext context) {
                   ),
                   InkWell(
                     onTap: () {
-                      shareScreen(context, size);
+                      shareScreenDialog(context, size);
                     },
                     child: Column(
                       children: [
