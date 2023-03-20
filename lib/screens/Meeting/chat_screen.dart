@@ -108,7 +108,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.network(
-                      'https://img.freepik.com/free-photo/man-with-headset-video-call_23-2148854889.jpg',
+                      'https://media.istockphoto.com/id/1270851164/photo/head-shot-portrait-smiling-african-american-man-making-video-call.jpg?s=612x612&w=0&k=20&c=C9F-ffqXQ5H0eYoYinI6qwRTah9yJ4Qz-GWX7GurXjg=',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -118,7 +118,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      'Robert',
+                      'Jeff Remi',
                       style: TextStyle(color: subTitle, fontSize: 10),
                     ),
                     const SizedBox(
