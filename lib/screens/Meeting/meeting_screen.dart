@@ -6,6 +6,9 @@ import 'package:zoom_ui/utils/colors.dart';
 
 import '../../component/exit_meeting_dialog.dart';
 import '../../component/meeting_person.dart';
+import '../../component/more_option.dart';
+import '../../component/reaction.dart';
+import '../../component/share_meet.dart';
 import '../../utils/responsive.dart';
 
 class MeetingScreen extends StatefulWidget {
@@ -391,7 +394,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(
-                              Icons.person_search_outlined,
+                              Icons.person_search_sharp,
                               color: title,
                             ),
                             const SizedBox(
@@ -421,7 +424,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(
-                              Icons.chat,
+                              Icons.chat_bubble,
                               color: title,
                             ),
                             const SizedBox(
@@ -437,62 +440,77 @@ class _MeetingScreenState extends State<MeetingScreen> {
                       const SizedBox(
                         width: 20,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.emoji_emotions_outlined,
-                            color: title,
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            'Reaction',
-                            style: TextStyle(color: subTitle),
-                          ),
-                        ],
+                      InkWell(
+                        onTap: () {
+                          reaction(context, size);
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.emoji_emotions,
+                              color: title,
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Reaction',
+                              style: TextStyle(color: subTitle),
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         width: 20,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.screen_share_sharp,
-                            color: title,
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            'Share',
-                            style: TextStyle(color: subTitle),
-                          ),
-                        ],
+                      InkWell(
+                        onTap: (){
+                          shareMeet(context, size);
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.screen_share_sharp,
+                              color: title,
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Share',
+                              style: TextStyle(color: subTitle),
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         width: 20,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.more_horiz_outlined,
-                            color: title,
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            'More',
-                            style: TextStyle(color: subTitle),
-                          ),
-                        ],
+                      InkWell(
+                        onTap: (){
+                          moreMenu(context, size);
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.more_horiz_outlined,
+                              color: title,
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'More',
+                              style: TextStyle(color: subTitle),
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         width: 20,
