@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zoom_ui/utils/colors.dart';
 
-import 'meeting_screen.dart';
+import 'Meeting/meeting_screen.dart';
 
 class JoinMeetingScreen extends StatefulWidget {
   const JoinMeetingScreen({Key? key}) : super(key: key);

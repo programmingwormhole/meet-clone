@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../screens/meeting_screen.dart';
+import '../screens/Meeting/meeting_screen.dart';
 import '../utils/colors.dart';
 
 void shareScreenDialog(BuildContext context, double size) {

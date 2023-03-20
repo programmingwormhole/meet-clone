@@ -31,8 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.4
-  lite_rolling_switch: ^1.0.1
-  flutter_switch: ^0.3.2
+  flutter_chat_bubble: ^2.0.2
 
 
   # The following adds the Cupertino Icons font to your application.
