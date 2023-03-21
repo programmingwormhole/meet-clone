@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:zoom_ui/screens/TeamChat/add_contact_email.dart';
 import 'package:zoom_ui/screens/home_screen.dart';
-import 'package:zoom_ui/utils/colors.dart';
+import 'package:zoom_ui/utils/config.dart';
 
 import '../Contact/contacts_screen.dart';
 import '../More/more_screen.dart';

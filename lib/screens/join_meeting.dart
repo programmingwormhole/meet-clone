@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zoom_ui/utils/colors.dart';
+import 'package:zoom_ui/utils/config.dart';
 
 import 'Meeting/meeting_screen.dart';
 

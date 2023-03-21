@@ -3,7 +3,7 @@ import 'package:zoom_ui/screens/join_meeting.dart';
 import 'package:zoom_ui/screens/start_new_meeting.dart';
 
 import '../../component/share_screen_dialog.dart';
-import '../../utils/colors.dart';
+import '../../utils/config.dart';
 import '../../utils/responsive.dart';
 
 Widget desktopView(double size, BuildContext context) {

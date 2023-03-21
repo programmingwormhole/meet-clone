@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:zoom_ui/utils/responsive.dart';
-import '../../utils/colors.dart';
+import '../../utils/config.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
@@ -136,9 +136,9 @@ class _ChatScreenState extends State<ChatScreen> {
                         constraints: BoxConstraints(
                           maxWidth: MediaQuery.of(context).size.width * 0.7,
                         ),
-                        child: const Text(
-                          "Yes! Just go to codecanyon.net and Programming Warmhole has been Uploaded This Source code item name called Poom - Video Conference App UI.",
-                          style: TextStyle(color: Colors.black),
+                        child: Text(
+                          "Yes! Just go to codecanyon.net and Programming Wormhole has been Uploaded This Source code item name called $appName - Video Conference App UI.",
+                          style: const TextStyle(color: Colors.black),
                         ),
                       ),
                     ),

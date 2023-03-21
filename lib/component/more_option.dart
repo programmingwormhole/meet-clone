@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zoom_ui/screens/Meeting/meeting_setting.dart';
 import 'package:zoom_ui/screens/Meeting/security_screen.dart';
 
-import '../utils/colors.dart';
+import '../utils/config.dart';
 
 void moreMenu(BuildContext context, double size) {
   showModalBottomSheet(

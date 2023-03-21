@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zoom_ui/screens/auth/login/login_screen.dart';
-import 'package:zoom_ui/utils/colors.dart';
+import 'package:zoom_ui/utils/config.dart';
 import 'auth/signup/age_screen.dart';
 import 'join_meeting.dart';
 
@@ -35,10 +35,20 @@ class WelcomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/noom_logo.png',
-              width: 350,
-              color: title,
+            Container(
+              width: 205,
+              height: 205,
+              decoration: BoxDecoration(
+                color: title,
+                borderRadius: BorderRadius.circular(40)
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Image.asset(
+                  'assets/images/poomLogo.png',
+                  width: 200,
+                ),
+              ),
             )
           ],
         ),

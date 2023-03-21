@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zoom_ui/utils/colors.dart';
+import 'package:zoom_ui/utils/config.dart';
 import 'package:zoom_ui/utils/responsive.dart';
 import 'full_name_screen.dart';
 

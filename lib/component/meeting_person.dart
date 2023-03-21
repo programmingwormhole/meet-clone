@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/colors.dart';
+import '../utils/config.dart';
 
 Widget meetPerson(double size, String image, String name, Color border) {
   return Container(

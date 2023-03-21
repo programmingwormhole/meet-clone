@@ -1,10 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zoom.ui.zoom_ui">
    <application
-        android:label="zoom_ui"
+        android:label="Poom"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
+            android:label="Poom"
             android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleTop"

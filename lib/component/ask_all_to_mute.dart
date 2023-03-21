@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/colors.dart';
+import '../utils/config.dart';
 
 void askToMute(BuildContext context, double size) {
   showModalBottomSheet(

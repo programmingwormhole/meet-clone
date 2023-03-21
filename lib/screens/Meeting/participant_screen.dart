@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zoom_ui/component/ask_all_to_mute.dart';
 import 'package:zoom_ui/component/participant_mute_all.dart';
 import 'package:zoom_ui/data/participant.dart';
-import 'package:zoom_ui/utils/colors.dart';
+import 'package:zoom_ui/utils/config.dart';
 
 import '../../component/participant_invite.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:zoom_ui/screens/welcome_screen.dart';
-import 'package:zoom_ui/utils/colors.dart';
+import 'package:zoom_ui/utils/config.dart';
 
 class OnBoardThree extends StatelessWidget {
   const OnBoardThree({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zoom_ui/screens/TeamChat/success_invite.dart';
 
-import '../../utils/colors.dart';
+import '../../utils/config.dart';
 
 class AddContact extends StatefulWidget {
   const AddContact({Key? key}) : super(key: key);

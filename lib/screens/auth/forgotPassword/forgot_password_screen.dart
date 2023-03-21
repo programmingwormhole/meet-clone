@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zoom_ui/screens/auth/login/login_screen.dart';
 
-import '../../../utils/colors.dart';
+import '../../../utils/config.dart';
 import '../../../utils/responsive.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {

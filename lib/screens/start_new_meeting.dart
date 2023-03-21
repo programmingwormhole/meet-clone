@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zoom_ui/screens/Meeting/meeting_screen.dart';
-import 'package:zoom_ui/utils/colors.dart';
+import 'package:zoom_ui/utils/config.dart';
 
 class StartNewMeetingScreen extends StatefulWidget {
   const StartNewMeetingScreen({Key? key}) : super(key: key);

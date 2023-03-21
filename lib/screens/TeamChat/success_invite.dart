@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zoom_ui/screens/home_screen.dart';
-import 'package:zoom_ui/utils/colors.dart';
+import 'package:zoom_ui/utils/config.dart';
 
 class SuccessInviteScreen extends StatelessWidget {
   final String email;

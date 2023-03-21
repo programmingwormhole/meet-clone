@@ -4,7 +4,7 @@ import 'package:zoom_ui/screens/Contact/contacts_screen.dart';
 import 'package:zoom_ui/screens/More/accessibility_setting_screen.dart';
 import 'package:zoom_ui/screens/More/contact_settiing_screen.dart';
 import 'package:zoom_ui/screens/TeamChat/team_chat_screen.dart';
-import 'package:zoom_ui/utils/colors.dart';
+import 'package:zoom_ui/utils/config.dart';
 
 import '../home_screen.dart';
 import 'meeting_setting_screen.dart';

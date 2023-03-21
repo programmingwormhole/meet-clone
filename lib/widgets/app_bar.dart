@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../component/home_screen_info_button.dart';
-import '../utils/colors.dart';
+import '../utils/config.dart';
 import '../utils/responsive.dart';
 
 PreferredSizeWidget appBar(BuildContext context, double size) {

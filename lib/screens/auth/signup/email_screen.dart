@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zoom_ui/screens/auth/signup/password_screen.dart';
-import 'package:zoom_ui/utils/colors.dart';
+import 'package:zoom_ui/utils/config.dart';
 import 'package:zoom_ui/utils/responsive.dart';
 
 class EmailScreen extends StatefulWidget {

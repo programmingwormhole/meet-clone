@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zoom_ui/utils/colors.dart';
+import 'package:zoom_ui/utils/config.dart';
 
 class ContactRequestScreen extends StatelessWidget {
   const ContactRequestScreen({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zoom_ui/screens/home_screen.dart';
 
-import '../utils/colors.dart';
+import '../utils/config.dart';
 
 void exitMeetingDialog(BuildContext context, double size) {
   showDialog(

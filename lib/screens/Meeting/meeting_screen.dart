@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zoom_ui/component/meeting_data.dart';
 import 'package:zoom_ui/screens/Meeting/chat_screen.dart';
 import 'package:zoom_ui/screens/Meeting/participant_screen.dart';
-import 'package:zoom_ui/utils/colors.dart';
+import 'package:zoom_ui/utils/config.dart';
 
 import '../../component/exit_meeting_dialog.dart';
 import '../../component/meeting_person.dart';

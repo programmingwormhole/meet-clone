@@ -4,7 +4,7 @@ import 'package:zoom_ui/screens/TeamChat/add_contact_email.dart';
 import 'package:zoom_ui/screens/TeamChat/team_chat_screen.dart';
 import 'package:zoom_ui/screens/home_screen.dart';
 import 'package:zoom_ui/screens/More/more_screen.dart';
-import 'package:zoom_ui/utils/colors.dart';
+import 'package:zoom_ui/utils/config.dart';
 
 class ContactScreen extends StatefulWidget {
   const ContactScreen({Key? key}) : super(key: key);

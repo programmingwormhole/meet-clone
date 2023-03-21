@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../component/share_screen_dialog.dart';
-import '../../utils/colors.dart';
+import '../../utils/config.dart';
 import '../../utils/responsive.dart';
 import '../join_meeting.dart';
 import '../start_new_meeting.dart';
