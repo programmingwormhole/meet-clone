@@ -104,7 +104,7 @@ void meetingData(BuildContext context, double size) {
                           const SizedBox(
                             height: 10,
                           ),
-                          Text(
+                          const Text(
                             'null',
                             style: TextStyle(color: Colors.red),
                           ),

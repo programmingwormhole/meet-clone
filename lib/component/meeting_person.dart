@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/colors.dart';
 
-Widget MeetPerson(double size, String image, String name, Color border) {
+Widget meetPerson(double size, String image, String name, Color border) {
   return Container(
     width: size * .5,
     height: size,

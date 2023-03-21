@@ -11,10 +11,10 @@ class SecurityScreen extends StatefulWidget {
 
 class _SecurityScreenState extends State<SecurityScreen> {
   bool _switch = false;
-  bool _switch2 = false;
+  bool _switch2 = true;
   bool _switch3 = false;
   bool _switch4 = false;
-  bool _switch5 = false;
+  bool _switch5 = true;
   bool _switch6 = false;
   bool _switch7 = false;
   bool _switch8 = false;

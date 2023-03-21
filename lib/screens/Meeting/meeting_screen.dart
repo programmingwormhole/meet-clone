@@ -80,47 +80,47 @@ class _MeetingScreenState extends State<MeetingScreen> {
         ),
       ),
       body: Column(
-        children: [
-          Expanded(
-            flex: 5,
-            child: Row(
               children: [
-                MeetPerson(
-                  size,
-                  'https://media.istockphoto.com/id/1270851164/photo/head-shot-portrait-smiling-african-american-man-making-video-call.jpg?s=612x612&w=0&k=20&c=C9F-ffqXQ5H0eYoYinI6qwRTah9yJ4Qz-GWX7GurXjg=',
-                  'Jeff Rami',
-                  black,
+                Expanded(
+                  flex: 5,
+                  child: Row(
+                    children: [
+                      meetPerson(
+                        size,
+                        'https://media.istockphoto.com/id/1270851164/photo/head-shot-portrait-smiling-african-american-man-making-video-call.jpg?s=612x612&w=0&k=20&c=C9F-ffqXQ5H0eYoYinI6qwRTah9yJ4Qz-GWX7GurXjg=',
+                        'Jeff Rami',
+                        black,
+                      ),
+                      meetPerson(
+                        size,
+                        'https://img.freepik.com/free-photo/man-with-headset-video-call_23-2148854889.jpg',
+                        'Robert',
+                        Colors.greenAccent,
+                      ),
+                    ],
+                  ),
                 ),
-                MeetPerson(
-                  size,
-                  'https://img.freepik.com/free-photo/man-with-headset-video-call_23-2148854889.jpg',
-                  'Robert',
-                  Colors.greenAccent,
+                Expanded(
+                  flex: 5,
+                  child: Row(
+                    children: [
+                      meetPerson(
+                        size,
+                        'https://img.freepik.com/free-photo/young-happy-businessman-with-headphones-waving-toward-camera-while-drinking-coffee-home_637285-6011.jpg',
+                        'Crish Mark',
+                        black,
+                      ),
+                      meetPerson(
+                        size,
+                        'https://img.freepik.com/premium-photo/positive-arab-freelancer-guy-headphones-having-online-video-call-speaking-business-partner_116547-22602.jpg',
+                        'James',
+                        black,
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
-          ),
-          Expanded(
-            flex: 5,
-            child: Row(
-              children: [
-                MeetPerson(
-                  size,
-                  'https://img.freepik.com/free-photo/young-happy-businessman-with-headphones-waving-toward-camera-while-drinking-coffee-home_637285-6011.jpg',
-                  'Crish Mark',
-                  black,
-                ),
-                MeetPerson(
-                  size,
-                  'https://img.freepik.com/premium-photo/positive-arab-freelancer-guy-headphones-having-online-video-call-speaking-business-partner_116547-22602.jpg',
-                  'James',
-                  black,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
       bottomNavigationBar: Responsive.isDesktop(context)
           ? Padding(
               padding: const EdgeInsets.all(8.0),
@@ -137,48 +137,66 @@ class _MeetingScreenState extends State<MeetingScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              setState(() {
-                                isMic = !isMic;
-                              });
-                            },
-                            icon: isMic
-                                ? const Icon(Icons.mic_off)
-                                : const Icon(Icons.mic),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            'Mute',
-                            style: TextStyle(color: subTitle),
-                          ),
-                        ],
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            isMic = !isMic;
+                          });
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            isMic
+                                ? Icon(
+                                    Icons.mic_off,
+                                    color: title,
+                                  )
+                                : Icon(
+                                    Icons.mic,
+                                    color: title,
+                                  ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Mute',
+                              style: TextStyle(color: subTitle),
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         width: 20,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.videocam_off_outlined,
-                            color: title,
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            'Start Video',
-                            style: TextStyle(color: subTitle),
-                          ),
-                        ],
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            isVideo = !isVideo;
+                          });
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            isVideo
+                                ? Icon(
+                                    Icons.videocam_off_outlined,
+                                    color: title,
+                                  )
+                                : Icon(
+                                    Icons.videocam,
+                                    color: title,
+                                  ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Start Video',
+                              style: TextStyle(color: subTitle),
+                            ),
+                          ],
+                        ),
                       ),
                       VerticalDivider(
                         color: title,
@@ -186,102 +204,137 @@ class _MeetingScreenState extends State<MeetingScreen> {
                         endIndent: 10,
                         indent: 10,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.person_search_outlined,
-                            color: title,
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            'Participant',
-                            style: TextStyle(color: subTitle),
-                          ),
-                        ],
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const Participant(),
+                            ),
+                          );
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.person_search_sharp,
+                              color: title,
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Participant',
+                              style: TextStyle(color: subTitle),
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         width: 20,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.chat,
-                            color: title,
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            'Chat',
-                            style: TextStyle(color: subTitle),
-                          ),
-                        ],
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const ChatScreen(),
+                            ),
+                          );
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.chat_bubble,
+                              color: title,
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Chat',
+                              style: TextStyle(color: subTitle),
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         width: 20,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.emoji_emotions_outlined,
-                            color: title,
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            'Reaction',
-                            style: TextStyle(color: subTitle),
-                          ),
-                        ],
+                      InkWell(
+                        onTap: () {
+                          reaction(context, size);
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.emoji_emotions,
+                              color: title,
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Reaction',
+                              style: TextStyle(color: subTitle),
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         width: 20,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.screen_share_sharp,
-                            color: title,
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            'Share',
-                            style: TextStyle(color: subTitle),
-                          ),
-                        ],
+                      InkWell(
+                        onTap: () {
+                          shareMeet(context, size);
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.screen_share_sharp,
+                              color: title,
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Share',
+                              style: TextStyle(color: subTitle),
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         width: 20,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.more_horiz_outlined,
-                            color: title,
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            'More',
-                            style: TextStyle(color: subTitle),
-                          ),
-                        ],
+                      InkWell(
+                        onTap: () {
+                          moreMenu(context, size);
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.more_horiz_outlined,
+                              color: title,
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'More',
+                              style: TextStyle(color: subTitle),
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         width: 20,
@@ -466,7 +519,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
                         width: 20,
                       ),
                       InkWell(
-                        onTap: (){
+                        onTap: () {
                           shareMeet(context, size);
                         },
                         child: Column(
@@ -491,7 +544,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
                         width: 20,
                       ),
                       InkWell(
-                        onTap: (){
+                        onTap: () {
                           moreMenu(context, size);
                         },
                         child: Column(

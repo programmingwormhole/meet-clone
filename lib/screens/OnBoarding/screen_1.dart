@@ -49,9 +49,7 @@ class OnBoardOne extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-
                     Row(
-
                       children: [
                         Container(
                           height: 30,
@@ -86,17 +84,22 @@ class OnBoardOne extends StatelessWidget {
                       ],
                     ),
                     InkWell(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (_)=> const OnBoardTwo()));
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const OnBoardTwo()));
                       },
                       child: Container(
                         height: 50,
                         width: 50,
                         decoration: BoxDecoration(
                             color: title.withOpacity(0.1),
-                            borderRadius: BorderRadius.circular(20)
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Icon(
+                          Icons.arrow_forward_ios_sharp,
+                          color: title,
                         ),
-                        child: Icon(Icons.arrow_forward_ios_sharp, color: title,),
                       ),
                     )
                   ],

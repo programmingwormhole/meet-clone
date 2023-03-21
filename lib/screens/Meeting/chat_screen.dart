@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
+import 'package:zoom_ui/utils/responsive.dart';
 import '../../utils/colors.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -166,7 +167,45 @@ class _ChatScreenState extends State<ChatScreen> {
                       color: title,
                     ),
                   ),
-                  Row(
+                  Responsive.isDesktop(context)
+                  ? Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.add_circle_outline,
+                            color: title.withOpacity(0.5),
+                          )),
+                      Container(
+                        height: 40,
+                        width: size * .9,
+                        decoration: BoxDecoration(
+                          color: title.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: title.withOpacity(0.1),
+                            width: 1.2,
+                          ),
+                        ),
+                        child: TextField(
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                              hintText: 'Tap here to chat',
+                              hintStyle:
+                              TextStyle(color: title.withOpacity(0.5))),
+                        ),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.send_outlined,
+                            color: title.withOpacity(0.5),
+                          ))
+                    ],
+                  )
+                  : Row(
                     children: [
                       IconButton(
                           onPressed: () {},

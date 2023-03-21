@@ -107,7 +107,6 @@ class _ParticipantState extends State<Participant> {
               );
             },
           ),
-
         ],
       ),
       bottomNavigationBar: Container(
@@ -167,7 +166,7 @@ class _ParticipantState extends State<Participant> {
                 width: 5,
               ),
               InkWell(
-                onTap: (){
+                onTap: () {
                   askToMute(context, size);
                 },
                 child: Container(

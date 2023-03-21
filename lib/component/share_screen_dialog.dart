@@ -20,7 +20,7 @@ void shareScreenDialog(BuildContext context, double size) {
           content: Container(
             height: 40,
             width: size * .9,
-            color: black.withOpacity(0.1),
+            color: black,
             child: Container(
               height: 60,
               width: double.infinity,

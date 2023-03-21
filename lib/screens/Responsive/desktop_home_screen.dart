@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:zoom_ui/screens/join_meeting.dart';
+import 'package:zoom_ui/screens/start_new_meeting.dart';
 
 import '../../component/share_screen_dialog.dart';
 import '../../utils/colors.dart';
 import '../../utils/responsive.dart';
+
 Widget desktopView(double size, BuildContext context) {
   return Row(
     children: [
@@ -27,8 +30,7 @@ Widget desktopView(double size, BuildContext context) {
                       children: [
                         Text(
                           'Personal Meeting ID',
-                          style:
-                          TextStyle(color: title, fontSize: 14),
+                          style: TextStyle(color: title, fontSize: 14),
                         ),
                         const SizedBox(
                           height: 10,
@@ -44,10 +46,15 @@ Widget desktopView(double size, BuildContext context) {
                           height: 10,
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(
-                              left: 8.0, right: 8),
+                          padding: const EdgeInsets.only(left: 8.0, right: 8),
                           child: InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const StartNewMeetingScreen()));
+                            },
                             child: Container(
                               height: 50,
                               width: size * 0.8,
@@ -61,17 +68,14 @@ Widget desktopView(double size, BuildContext context) {
                                 padding: const EdgeInsets.only(
                                     left: 15.0, right: 15),
                                 child: Column(
-                                  crossAxisAlignment:
-                                  CrossAxisAlignment.center,
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Row(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.center,
+                                          CrossAxisAlignment.center,
                                       mainAxisAlignment:
-                                      MainAxisAlignment
-                                          .spaceBetween,
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
                                           'Start meeting',
@@ -80,8 +84,7 @@ Widget desktopView(double size, BuildContext context) {
                                           ),
                                         ),
                                         Icon(
-                                          Icons
-                                              .calendar_today_outlined,
+                                          Icons.calendar_today_outlined,
                                           color: title,
                                         )
                                       ],
@@ -93,10 +96,11 @@ Widget desktopView(double size, BuildContext context) {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(
-                              left: 8.0, right: 8),
+                          padding: const EdgeInsets.only(left: 8.0, right: 8),
                           child: InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              // Navigator.push(context, MaterialPageRoute(builder: (context)=> const ()));
+                            },
                             child: Container(
                               height: 50,
                               width: size * 0.8,
@@ -104,21 +108,18 @@ Widget desktopView(double size, BuildContext context) {
                                 color: title.withOpacity(0.2),
                                 border: const Border(
                                   top: BorderSide(
-                                      color: Colors.white,
-                                      width: 0.1),
+                                      color: Colors.white, width: 0.1),
                                   bottom: BorderSide(
-                                      color: Colors.white,
-                                      width: 0.1),
+                                      color: Colors.white, width: 0.1),
                                 ),
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.only(
                                     left: 15.0, right: 15),
                                 child: Row(
-                                  crossAxisAlignment:
-                                  CrossAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       'Send Invitation',
@@ -137,8 +138,7 @@ Widget desktopView(double size, BuildContext context) {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(
-                              left: 8.0, right: 8),
+                          padding: const EdgeInsets.only(left: 8.0, right: 8),
                           child: InkWell(
                             onTap: () {},
                             child: Container(
@@ -154,17 +154,14 @@ Widget desktopView(double size, BuildContext context) {
                                 padding: const EdgeInsets.only(
                                     left: 15.0, right: 15),
                                 child: Column(
-                                  crossAxisAlignment:
-                                  CrossAxisAlignment.center,
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Row(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.center,
+                                          CrossAxisAlignment.center,
                                       mainAxisAlignment:
-                                      MainAxisAlignment
-                                          .spaceBetween,
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
                                           'Edit Meeting',
@@ -206,18 +203,17 @@ Widget desktopView(double size, BuildContext context) {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> const StartNewMeetingScreen()));
+                    },
                     child: Column(
                       children: [
                         Container(
-                          height:
-                          Responsive.isDesktop(context) ? 80 : 55,
-                          width:
-                          Responsive.isDesktop(context) ? 80 : 55,
+                          height: Responsive.isDesktop(context) ? 80 : 55,
+                          width: Responsive.isDesktop(context) ? 80 : 55,
                           decoration: BoxDecoration(
                               color: Colors.deepOrange,
-                              borderRadius:
-                              BorderRadius.circular(15)),
+                              borderRadius: BorderRadius.circular(15)),
                           child: Center(
                             child: Icon(
                               Icons.video_call_sharp,
@@ -233,26 +229,24 @@ Widget desktopView(double size, BuildContext context) {
                           'New Meeting',
                           style: TextStyle(
                               color: subTitle,
-                              fontSize: Responsive.isDesktop(context)
-                                  ? 20
-                                  : 12),
+                              fontSize:
+                                  Responsive.isDesktop(context) ? 20 : 12),
                         )
                       ],
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> const JoinMeetingScreen()));
+                    },
                     child: Column(
                       children: [
                         Container(
-                          height:
-                          Responsive.isDesktop(context) ? 80 : 55,
-                          width:
-                          Responsive.isDesktop(context) ? 80 : 55,
+                          height: Responsive.isDesktop(context) ? 80 : 55,
+                          width: Responsive.isDesktop(context) ? 80 : 55,
                           decoration: BoxDecoration(
                               color: background,
-                              borderRadius:
-                              BorderRadius.circular(15)),
+                              borderRadius: BorderRadius.circular(15)),
                           child: Center(
                             child: Icon(
                               Icons.add_box,
@@ -268,26 +262,22 @@ Widget desktopView(double size, BuildContext context) {
                           'Join',
                           style: TextStyle(
                               color: subTitle,
-                              fontSize: Responsive.isDesktop(context)
-                                  ? 20
-                                  : 12),
+                              fontSize:
+                                  Responsive.isDesktop(context) ? 20 : 12),
                         )
                       ],
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: null,
                     child: Column(
                       children: [
                         Container(
-                          height:
-                          Responsive.isDesktop(context) ? 80 : 55,
-                          width:
-                          Responsive.isDesktop(context) ? 80 : 55,
+                          height: Responsive.isDesktop(context) ? 80 : 55,
+                          width: Responsive.isDesktop(context) ? 80 : 55,
                           decoration: BoxDecoration(
                               color: background,
-                              borderRadius:
-                              BorderRadius.circular(15)),
+                              borderRadius: BorderRadius.circular(15)),
                           child: Center(
                             child: Icon(
                               Icons.calendar_month_rounded,
@@ -303,9 +293,8 @@ Widget desktopView(double size, BuildContext context) {
                           'Schedule',
                           style: TextStyle(
                               color: subTitle,
-                              fontSize: Responsive.isDesktop(context)
-                                  ? 20
-                                  : 12),
+                              fontSize:
+                                  Responsive.isDesktop(context) ? 20 : 12),
                         )
                       ],
                     ),
@@ -317,14 +306,11 @@ Widget desktopView(double size, BuildContext context) {
                     child: Column(
                       children: [
                         Container(
-                          height:
-                          Responsive.isDesktop(context) ? 80 : 55,
-                          width:
-                          Responsive.isDesktop(context) ? 80 : 55,
+                          height: Responsive.isDesktop(context) ? 80 : 55,
+                          width: Responsive.isDesktop(context) ? 80 : 55,
                           decoration: BoxDecoration(
                               color: background,
-                              borderRadius:
-                              BorderRadius.circular(15)),
+                              borderRadius: BorderRadius.circular(15)),
                           child: Center(
                             child: Icon(
                               Icons.screen_share_rounded,
@@ -340,9 +326,7 @@ Widget desktopView(double size, BuildContext context) {
                           'Share Screen',
                           style: TextStyle(
                             color: subTitle,
-                            fontSize: Responsive.isDesktop(context)
-                                ? 20
-                                : 12,
+                            fontSize: Responsive.isDesktop(context) ? 20 : 12,
                           ),
                         )
                       ],

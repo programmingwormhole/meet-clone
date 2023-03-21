@@ -10,14 +10,12 @@ class MeetingSetting extends StatefulWidget {
 }
 
 class _MeetingSettingState extends State<MeetingSetting> {
-  bool _switch = false;
   bool _switch2 = false;
   bool _switch3 = false;
   bool _switch4 = false;
   bool _switch5 = false;
   bool _switch6 = true;
   bool _switch7 = false;
-  bool _switch8 = false;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size.width;
@@ -80,7 +78,7 @@ class _MeetingSettingState extends State<MeetingSetting> {
                             textAlign: TextAlign.center,
                             style: TextStyle(color: title.withOpacity(0.5)),
                             decoration: InputDecoration(
-                                hintText: 'Rober\'s Meet',
+                                hintText: 'Robert\'s Meet',
                                 focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide: BorderSide(
@@ -160,7 +158,7 @@ class _MeetingSettingState extends State<MeetingSetting> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              'GENARAL',
+              'GENERAL',
               style: TextStyle(color: subTitle),
             ),
           ),
